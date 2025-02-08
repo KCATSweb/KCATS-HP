@@ -101,16 +101,16 @@
                                     </span>
                                 </p>
                             </div>
-                        </div>
-                        <div class="flex justify-center">
-                            <a href="images/3rd KCATS ver.1.jpg" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors" target="_blank" title="右クリックで画像を保存できます">
-                                <i class="fas fa-file-image mr-2"></i>
-                                セミナーポスターを表示<br><span class="text-xs">　(ダウンロードはこちらから)</span>
-                            </a>
+                            <div class="mt-6 flex justify-center">
+                                <a href="images/第3回KCATSセミナー.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    PDFをダウンロード
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="relative aspect-[3/4] bg-gray-100 rounded-xl overflow-hidden shadow-md cursor-pointer" data-aos="fade-left" onclick="openModal('posterModal')">
-                        <img src="images/3rd KCATS ver.1.jpg" alt="第3回KCATSセミナーポスター" class="absolute inset-0 w-full h-full object-contain">
+                    <div class="relative aspect-[3/4] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-left">
+                        <img src="images/3rd KCATS ver.1.jpg" alt="第3回KCATSセミナーポスター" class="w-full h-full object-contain">
                     </div>
                 </div>
             </div>
@@ -123,6 +123,16 @@
                     <img src="images/3rd KCATS ver.1.jpg" alt="第3回KCATSセミナーポスター（拡大表示）" class="w-full h-auto object-contain mx-auto">
                     <button onclick="closeModal('posterModal')" class="absolute -top-4 -right-4 bg-white rounded-full w-8 h-8 text-black hover:bg-gray-200 text-2xl flex items-center justify-center shadow-lg">&times;</button>
                 </div>
+            </div>
+        </div>
+
+        <!-- PDFビューワーモーダル -->
+        <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white p-4 rounded-lg w-11/12 h-5/6 relative">
+                <button onclick="closePdfModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <iframe src="images/第3回KCATSセミナー.pdf" class="w-full h-full" frameborder="0"></iframe>
             </div>
         </div>
 
@@ -139,6 +149,15 @@
                 document.body.style.overflow = 'auto';
             }
 
+            // PDFモーダル用の関数
+            function openPdfModal() {
+                document.getElementById('pdfModal').classList.remove('hidden');
+            }
+
+            function closePdfModal() {
+                document.getElementById('pdfModal').classList.add('hidden');
+            }
+
             // モーダルの外側をクリックしても閉じられるように
             document.getElementById('posterModal').addEventListener('click', function(e) {
                 if (e.target === this) {
@@ -146,10 +165,17 @@
                 }
             });
 
+            document.getElementById('pdfModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePdfModal();
+                }
+            });
+
             // ESCキーでモーダルを閉じられるように
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     closeModal('posterModal');
+                    closePdfModal();
                 }
             });
 
