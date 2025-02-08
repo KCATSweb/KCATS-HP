@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世話人一覧 - KCATS</title>
+    <meta name="description" content="KCATSの世話人一覧 - Kansai Cardiac Arrhythmias Treatment Society">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- ナビゲーションバー -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text hover:from-blue-400 hover:to-purple-500 transition-all">KCATS</a>
+                </div>
+                <!-- デスクトップメニュー -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html#about" class="text-gray-300 hover:text-white hover:scale-110 transition-all">About</a>
+                        <a href="seminars.html" class="text-gray-300 hover:text-white hover:scale-110 transition-all">定例会</a>
+                        <a href="members.html" class="text-white font-semibold">世話人一覧</a>
+                        <a href="links.html" class="text-gray-300 hover:text-white hover:scale-110 transition-all">関連リンク</a>
+                        <a href="rules.html" class="text-gray-300 hover:text-white hover:scale-110 transition-all">定款</a>
+                    </div>
+                </div>
+                <!-- ハンバーガーメニューボタン -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-md border-l border-white/10 md:hidden">
+            <div class="p-4">
+                <button id="menu-close" class="text-gray-300 hover:text-white focus:outline-none float-right">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4 p-4 mt-8">
+                <a href="index.html#about" class="text-gray-300 hover:text-white hover:translate-x-2 transition-all">About</a>
+                <a href="seminars.html" class="text-gray-300 hover:text-white hover:translate-x-2 transition-all">定例会</a>
+                <a href="members.html" class="text-white font-semibold hover:translate-x-2 transition-all">世話人一覧</a>
+                <a href="links.html" class="text-gray-300 hover:text-white hover:translate-x-2 transition-all">関連リンク</a>
+                <a href="rules.html" class="text-gray-300 hover:text-white hover:translate-x-2 transition-all">定款</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダー -->
+    <header class="pt-32 pb-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+                    世話人一覧
+                </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 世話人一覧セクション -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8">
+                <!-- 代表世話人 -->
+                <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl p-8 backdrop-blur-sm border border-white/10" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">代表世話人</h2>
+                    <ul class="space-y-4">
+                        <li class="text-gray-300">
+                            <span class="font-semibold">中谷 暁洋</span>
+                            <div class="text-sm text-gray-400">りんくう総合医療センター　【KCATS・代表】</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 世話人リスト -->
+                <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl p-8 backdrop-blur-sm border border-white/10" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">世話人</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="space-y-4">
+                            <div class="text-gray-300">
+                                <span class="font-semibold">岩見 陸</span>
+                                <div class="text-sm text-gray-400">大阪警察病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">植田 隆介</span>
+                                <div class="text-sm text-gray-400">近畿大学奈良病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">亀井 理生</span>
+                                <div class="text-sm text-gray-400">奈良県総合医療センター</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">菊池 佳峰</span>
+                                <div class="text-sm text-gray-400">大阪急性期・総合医療センター</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">黒木 良祐</span>
+                                <div class="text-sm text-gray-400">城山病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">坂野 好宣</span>
+                                <div class="text-sm text-gray-400">大阪赤十字病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">佐藤 純</span>
+                                <div class="text-sm text-gray-400">近畿大学奈良病院</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="text-gray-300">
+                                <span class="font-semibold">柴田 幸美</span>
+                                <div class="text-sm text-gray-400">近畿大学病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">須藤 康子</span>
+                                <div class="text-sm text-gray-400">医誠会国際総合病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">田出 修</span>
+                                <div class="text-sm text-gray-400">大阪赤十字病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">谷岡 怜</span>
+                                <div class="text-sm text-gray-400">神戸大学医学部附属病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">中野 克哉</span>
+                                <div class="text-sm text-gray-400">神戸大学医学部附属病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">原光 佑一</span>
+                                <div class="text-sm text-gray-400">岸和田徳洲会病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">福井 宏幸</span>
+                                <div class="text-sm text-gray-400">東宝塚さとう病院</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="text-gray-300">
+                                <span class="font-semibold">藤井 順也</span>
+                                <div class="text-sm text-gray-400">大阪医療センター</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">水谷 晃暢</span>
+                                <div class="text-sm text-gray-400">桜橋渡辺病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">森奥 知由</span>
+                                <div class="text-sm text-gray-400">大阪ろうさい病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">安田 英也</span>
+                                <div class="text-sm text-gray-400">城山病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">矢津 優子</span>
+                                <div class="text-sm text-gray-400">岸和田徳洲会病院</div>
+                            </div>
+                            <div class="text-gray-300">
+                                <span class="font-semibold">吉田 光海</span>
+                                <div class="text-sm text-gray-400">りんくう総合医療センター</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 事務局 -->
+                <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl p-8 backdrop-blur-sm border border-white/10" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">事務局</h2>
+                    <ul class="space-y-4">
+                        <li class="text-gray-300">
+                            <span class="font-semibold">松本 景史</span>
+                            <div class="text-sm text-gray-400">日本光電工業株式会社　【KCATS・事務局】</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-black/80 backdrop-blur-md border-t border-white/10 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-sm text-gray-400"> 2025 KCATS - Kansai Cardiac Arrhythmias Treatment Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) ライブラリの読み込みと初期化 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
