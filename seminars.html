@@ -100,7 +100,7 @@
                                 <p class="mt-4">次回セミナーの情報は、決まり次第このページでお知らせいたします。</p>
                             </div>
                             <div class="mt-6 flex justify-center">
-                                <a href="images/第3回KCATSセミナー.pdf" target="_blank" class="hidden">
+                                <a href="images/第3回KCATSセミナー.pdf" onclick="openPdfModal(); return false;" class="hidden">
                                     <i class="fas fa-file-pdf mr-2"></i>
                                     <span class="hidden">セミナー資料（PDF）</span>
                                 </a>
@@ -130,7 +130,7 @@
                 <button onclick="closePdfModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
                     <i class="fas fa-times text-xl"></i>
                 </button>
-                <iframe src="images/第3回KCATSセミナー.pdf" class="w-full h-full" frameborder="0"></iframe>
+                <iframe data-src="images/第3回KCATSセミナー.pdf" class="w-full h-full" frameborder="0"></iframe>
             </div>
         </div>
 
@@ -150,10 +150,16 @@
             // PDFモーダル用の関数
             function openPdfModal() {
                 document.getElementById('pdfModal').classList.remove('hidden');
+                const pdfIframe = document.querySelector('#pdfModal iframe');
+                pdfIframe.src = pdfIframe.dataset.src;
+                document.body.style.overflow = 'hidden';
             }
 
             function closePdfModal() {
                 document.getElementById('pdfModal').classList.add('hidden');
+                const pdfIframe = document.querySelector('#pdfModal iframe');
+                pdfIframe.src = '';
+                document.body.style.overflow = 'auto';
             }
 
             // モーダルの外側をクリックしても閉じられるように
